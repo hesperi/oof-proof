@@ -12,6 +12,8 @@ client.on('message', message => {
       message.delete()
         .then(msg => console.log(`Deleted message from ${msg.author}`))
         .catch(console.error);
+    } else {
+      message.reply("Bot doesn't have permissions to delete message!");
     }
   }
 });
