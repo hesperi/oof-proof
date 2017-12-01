@@ -8,7 +8,11 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.content.toLowerCase() === 'oof') {
-    message.reply('pong');
+    if (message.deletable) {
+      message.delete()
+        .then(msg => console.log(`Deleted message from ${msg.author}`))
+        .catch(console.error);
+    }
   }
 });
 
