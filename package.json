@@ -1,0 +1,14 @@
+{
+  "name": "oof-proof",
+  "version": "1.0.0",
+  "description": "Protects your discord server from oofs",
+  "main": "oof-proof.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hintss",
+  "license": "",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
