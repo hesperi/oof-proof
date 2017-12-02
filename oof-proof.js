@@ -12,7 +12,7 @@ client.on('message', message => {
   if (line.indexOf(" oof ") >= 0) {
     if (message.deletable) {
       message.delete()
-        .then(msg => console.log(`Deleted message from ${msg.author}`))
+        .then(msg => console.log(`Deleted message from ${msg.author}: ${msg.content}`))
         .catch(console.error);
     } else {
       message.reply("Bot doesn't have permissions to delete message!");
