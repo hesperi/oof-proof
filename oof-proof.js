@@ -9,7 +9,7 @@ client.on('ready', () => {
 client.on('message', message => {
   line = message.content.toLowerCase();
   line = " " + line + " ";
-  if (line.indexOf("oof") >= 0) {
+  if (line.indexOf(" oof ") >= 0) {
     if (message.deletable) {
       message.delete()
         .then(msg => console.log(`Deleted message from ${msg.author}`))
