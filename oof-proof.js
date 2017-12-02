@@ -9,6 +9,8 @@ client.on('ready', () => {
 client.on('message', message => {
   line = message.content.toLowerCase();
   line = " " + line + " ";
+  line = line.replace(/[^a-z0-9 ]/gi, "");
+  line = line.replace(/0/g, "o");
   if (line.indexOf(" oof ") >= 0) {
     if (message.deletable) {
       message.delete()
