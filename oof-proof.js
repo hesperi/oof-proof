@@ -26,4 +26,8 @@ client.on('message', message => {
   }
 });
 
-client.login(config.token);
+client.login(config.token)
+  .catch(err => {
+    console.error('Unable to log in to discord:', err);
+    process.exit(1);
+  });
