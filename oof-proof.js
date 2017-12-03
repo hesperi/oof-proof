@@ -17,7 +17,9 @@ client.on('message', message => {
         .then(msg => console.log(`Deleted message from ${msg.author}: ${msg.content}`))
         .catch(console.error);
     } else {
-      message.reply("Bot doesn't have permissions to delete message!");
+      reply = message.reply("Bot doesn't have permissions to delete message!").then(msg => setTimeout(function() {
+        msg.delete();
+      }, 3000));
     }
   }
 });
