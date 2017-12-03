@@ -7,11 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  line = message.content.toLowerCase();
-  line = " " + line + " ";
-  line = line.replace(/[^a-z0-9 ]/gi, "");
-  line = line.replace(/0/g, "o");
-  if (line.indexOf(" oof ") >= 0) {
+  if (/\b[o0][o0]f\b/i.test(message.content)) {
     if (message.deletable) {
       message.delete()
         .then(msg => console.log(`Deleted message from ${msg.author}: ${msg.content}`))
