@@ -3,7 +3,11 @@ const client = new Discord.Client();
 var config = require('./config.json');
 
 client.on('ready', () => {
-  console.log('I am ready!');
+  console.log('Connected to discord!');
+});
+
+client.on('reconnecting', () => {
+  console.log('Disconnected from discord, reconnecting...');
 });
 
 client.on('message', message => {
