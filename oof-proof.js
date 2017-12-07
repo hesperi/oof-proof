@@ -17,7 +17,12 @@ client.on('message', message => {
         .then(msg => console.log(`Deleted message from ${msg.author}: ${msg.content}`))
         .catch(console.error);
     } else {
-      reply = message.reply("Bot doesn't have permissions to delete message!").then(msg => setTimeout(function() {
+      if (message.channel instanceof TextChannel) {
+        replyMsg = "Bot doesn't have permission to delete messages!";
+      } else {
+        replyMsg = "Bot can't delete messages in DMs!";
+      }
+      reply = message.reply(replyMsg).then(msg => setTimeout(function() {
         if (msg.deletable) {
           msg.delete();
         }
