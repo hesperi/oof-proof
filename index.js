@@ -11,10 +11,10 @@ client.on('reconnecting', () => {
 });
 
 client.on('message', message => {
-  if (!/\b[o0][o0]f\b/i.test(message.content)) {
+  if (!isOof(message.content)) {
     return;
   }
-  
+
   if (message.deletable) {
     message.delete()
       .then(msg => console.log(`Deleted message from ${msg.author}: ${msg.content}`))
@@ -37,3 +37,9 @@ client.login(config.token).catch(err => {
   console.error('Unable to log in to discord:', err);
   process.exit(1);
 });
+
+function isOof(line) {
+  return /\b[o0][o0]f\b/i.test(line);
+}
+
+module.exports = isOof;

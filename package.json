@@ -2,20 +2,23 @@
   "name": "oof-proof",
   "version": "1.0.0",
   "description": "Protects your discord server from oofs",
-  "main": "oof-proof.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx ava"
   },
   "author": {
-      "name": "hintss",
-      "url": "https://hintss.pw/"
+    "name": "hintss",
+    "url": "https://hintss.pw/"
   },
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "repository": "https://github.com/hesperi/oof-proof.git",
   "bugs": {
-      "url": "https://github.com/hesperi/oof-proof/issues"
+    "url": "https://github.com/hesperi/oof-proof/issues"
   },
   "dependencies": {
     "discord.js": "^11.2.1"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0"
   }
 }
