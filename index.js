@@ -39,7 +39,7 @@ client.login(config.token).catch(err => {
 });
 
 function isOof(line) {
-  return /\b([o0] ?)*[o0] ?f\b/i.test(line);
+  return /\b([o0] ?)*[o0] ?f(ie)?\b/i.test(line);
 }
 
 module.exports = isOof;
