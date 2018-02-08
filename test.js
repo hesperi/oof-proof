@@ -13,4 +13,5 @@ test('Properly detects oofs', t => {
   t.true(oof("o o o f", 'long oof with spaces'));
   t.true(oof("oofie"), 'oofie');
   t.false(oof("proof"), 'doesn\'t detect words containing oof');
+  t.false(oof("of"), 'doesn\'t detect \'of\'');
 });

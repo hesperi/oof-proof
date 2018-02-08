@@ -58,7 +58,7 @@ function setOofCount(client, count) {
 }
 
 function isOof(line) {
-  return /\b([o0] ?)*[o0] ?f(ie)?\b/i.test(line);
+  return /\b([o0] ?)+[o0] ?f(ie)?\b/i.test(line);
 }
 
 module.exports = isOof;
